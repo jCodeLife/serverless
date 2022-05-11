@@ -31,7 +31,7 @@ describe('test/unit/lib/cli/interactive-setup/console-set-org.test.js', function
       '@serverless/utils/auth/resolve-mode': async () => authMode,
       '@serverless/utils/api-request': async (pathname) => {
         if (pathname === '/me') return { userId: 'user' };
-        if (pathname === 'users/user/orgs') {
+        if (pathname === '/users/user/orgs') {
           return { orgs: mockOrgNames.map((orgName) => ({ orgName })) };
         }
         throw new Error(`Unexpected pathname "${pathname}"`);
